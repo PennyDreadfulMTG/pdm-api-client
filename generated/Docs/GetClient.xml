@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+    <member name="UpdatedDecksAsync(string,RequestContext)">
+      <example>
+This sample shows how to call UpdatedDecksAsync and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.UpdatedDecksAsync(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call UpdatedDecksAsync with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.UpdatedDecksAsync("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("last_archetype_change").ToString());
+Console.WriteLine(result.GetProperty("page").ToString());
+Console.WriteLine(result.GetProperty("total").ToString());
+]]></code></example>
+    </member>
+    <member name="UpdatedDecks(string,RequestContext)">
+      <example>
+This sample shows how to call UpdatedDecks and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.UpdatedDecks(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call UpdatedDecks with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.UpdatedDecks("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("objects")[0].GetProperty("last_archetype_change").ToString());
+Console.WriteLine(result.GetProperty("page").ToString());
+Console.WriteLine(result.GetProperty("total").ToString());
+]]></code></example>
+    </member>
+    <member name="LoadDeckAsync(int,string,RequestContext)">
+      <example>
+This sample shows how to call LoadDeckAsync and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.LoadDeckAsync(1234, null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call LoadDeckAsync with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.LoadDeckAsync(1234, "<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("last_archetype_change").ToString());
+]]></code></example>
+    </member>
+    <member name="LoadDeck(int,string,RequestContext)">
+      <example>
+This sample shows how to call LoadDeck and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.LoadDeck(1234, null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call LoadDeck with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.LoadDeck(1234, "<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("last_archetype_change").ToString());
+]]></code></example>
+    </member>
+    <member name="LeagueAsync(string,RequestContext)">
+      <example>
+This sample shows how to call LeagueAsync and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.LeagueAsync(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call LeagueAsync with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.LeagueAsync("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("start_date").ToString());
+Console.WriteLine(result.GetProperty("end_date").ToString());
+Console.WriteLine(result.GetProperty("top_n").ToString());
+Console.WriteLine(result.GetProperty("num_decks").ToString());
+Console.WriteLine(result.GetProperty("num_reviewed").ToString());
+Console.WriteLine(result.GetProperty("sponsor_name").ToString());
+Console.WriteLine(result.GetProperty("series_name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("last_archetype_change").ToString());
+]]></code></example>
+    </member>
+    <member name="League(string,RequestContext)">
+      <example>
+This sample shows how to call League and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.League(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call League with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.League("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("start_date").ToString());
+Console.WriteLine(result.GetProperty("end_date").ToString());
+Console.WriteLine(result.GetProperty("top_n").ToString());
+Console.WriteLine(result.GetProperty("num_decks").ToString());
+Console.WriteLine(result.GetProperty("num_reviewed").ToString());
+Console.WriteLine(result.GetProperty("sponsor_name").ToString());
+Console.WriteLine(result.GetProperty("series_name").ToString());
+Console.WriteLine(result.GetProperty("type").ToString());
+Console.WriteLine(result.GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("decks")[0].GetProperty("last_archetype_change").ToString());
+]]></code></example>
+    </member>
+    <member name="LoadRandomDeckAsync(string,RequestContext)">
+      <example>
+This sample shows how to call LoadRandomDeckAsync and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.LoadRandomDeckAsync(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call LoadRandomDeckAsync with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.LoadRandomDeckAsync("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("last_archetype_change").ToString());
+]]></code></example>
+    </member>
+    <member name="LoadRandomDeck(string,RequestContext)">
+      <example>
+This sample shows how to call LoadRandomDeck and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.LoadRandomDeck(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call LoadRandomDeck with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.LoadRandomDeck("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("id").ToString());
+Console.WriteLine(result.GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("created_date").ToString());
+Console.WriteLine(result.GetProperty("updated_date").ToString());
+Console.WriteLine(result.GetProperty("wins").ToString());
+Console.WriteLine(result.GetProperty("losses").ToString());
+Console.WriteLine(result.GetProperty("draws").ToString());
+Console.WriteLine(result.GetProperty("finish").ToString());
+Console.WriteLine(result.GetProperty("archetype_id").ToString());
+Console.WriteLine(result.GetProperty("archetype_name").ToString());
+Console.WriteLine(result.GetProperty("source_url").ToString());
+Console.WriteLine(result.GetProperty("competition_id").ToString());
+Console.WriteLine(result.GetProperty("competition_name").ToString());
+Console.WriteLine(result.GetProperty("person").ToString());
+Console.WriteLine(result.GetProperty("decklist_hash").ToString());
+Console.WriteLine(result.GetProperty("retired").ToString());
+Console.WriteLine(result.GetProperty("colors")[0].ToString());
+Console.WriteLine(result.GetProperty("omw").ToString());
+Console.WriteLine(result.GetProperty("season_id").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("maindeck")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("n").ToString());
+Console.WriteLine(result.GetProperty("sideboard")[0].GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("url").ToString());
+Console.WriteLine(result.GetProperty("source_name").ToString());
+Console.WriteLine(result.GetProperty("competition_type_name").ToString());
+Console.WriteLine(result.GetProperty("last_archetype_change").ToString());
+]]></code></example>
+    </member>
+    <member name="RotationAsync(string,RequestContext)">
+      <example>
+This sample shows how to call RotationAsync and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.RotationAsync(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call RotationAsync with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.RotationAsync("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("last").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("enter_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("enter_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("exit_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("exit_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("enter_date_dt").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("enter_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("enter_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("exit_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("exit_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("enter_date_dt").ToString());
+Console.WriteLine(result.GetProperty("diff").ToString());
+Console.WriteLine(result.GetProperty("friendly_diff").ToString());
+]]></code></example>
+    </member>
+    <member name="Rotation(string,RequestContext)">
+      <example>
+This sample shows how to call Rotation and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.Rotation(null, null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.ToString());
+]]></code>
+This sample shows how to call Rotation with all parameters and parse the result.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.Rotation("<xFields>", null);
+
+JsonElement result = JsonDocument.Parse(response.ContentStream).RootElement;
+Console.WriteLine(result.GetProperty("last").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("enter_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("enter_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("exit_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("exit_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("last").GetProperty("enter_date_dt").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("code").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("name").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("enter_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("enter_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("exit_date").GetProperty("exact").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("exit_date").GetProperty("rough").ToString());
+Console.WriteLine(result.GetProperty("next").GetProperty("enter_date_dt").ToString());
+Console.WriteLine(result.GetProperty("diff").ToString());
+Console.WriteLine(result.GetProperty("friendly_diff").ToString());
+]]></code></example>
+    </member>
+    <member name="SeasonCodesAsync(RequestContext)">
+      <example>
+This sample shows how to call SeasonCodesAsync.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.SeasonCodesAsync();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call SeasonCodesAsync with all request content.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = await client.SeasonCodesAsync();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+    <member name="SeasonCodes(RequestContext)">
+      <example>
+This sample shows how to call SeasonCodes.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.SeasonCodes();
+
+Console.WriteLine(response.Status);
+]]></code>
+This sample shows how to call SeasonCodes with all request content.
+<code><![CDATA[
+GetClient client = new GetClient();
+
+Response response = client.SeasonCodes();
+
+Console.WriteLine(response.Status);
+]]></code></example>
+    </member>
+  </members>
+</doc>
